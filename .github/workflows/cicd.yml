@@ -4,10 +4,10 @@ name: CI/CD
 on:
   push:
     branches:
-      - gh-pages
+      - main
   pull_request:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   test-build:
