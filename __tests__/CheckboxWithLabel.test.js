@@ -1,5 +1,7 @@
-import {cleanup, fireEvent, render} from '@testing-library/react';
-import CheckboxWithLabel from '../src/components/CheckboxWithLabel';
+import { cleanup, fireEvent} from "@testing-library/react";
+import { render } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import CheckboxWithLabel from "../src/components/CheckboxWithLabel";
 
 /*
  3. This test suite specifically is about testing React components. It's a bit more complicated, as we're using
@@ -16,10 +18,13 @@ afterEach(cleanup);
  You need to render the component: https://testing-library.com/docs/react-testing-library/api/#render
  You'll need to virtually click on the checkbox: https://testing-library.com/docs/dom-testing-library/api-events/#fireevent
 */
-test('REPLACE_ME', () => {
+test("CheckboxWithLabel changes the label after each click", () => {
   // 1. Arrange: render checkbox and store the component as a var, so you can refer to it later.
-
+ const { asFragment, getByLabelText } = render(
+   <CheckboxWithLabel labelOn="on" labelOff="off" />
+ );
   // 2. Assert: check that checkbox is initially off. You can do something like 'checkbox.checked' to check its value
+
 
   // 3. Act: click on the checkbox using FireEvent
 

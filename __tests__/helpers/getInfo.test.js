@@ -11,9 +11,9 @@ in the TODO).
 4. Run the test and see if it passes. If not, try and figure out why.
 You might have forgotten a step. See the sum.test.js and figure out the missing piece.
 */
-
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+import { getInfo } from '../../src/helpers/getInfo';
+test('it should return none when pass null', () => {
+     expect(getInfo(null)).toBe("none");
 });
 
 
@@ -30,10 +30,30 @@ test('REPLACE_ME', () => {
   6. For extra work, try and write another test for both cases, if there is a 'name' in the object, and one without.
 */
 
-test('REPLACE_ME', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test(`if the country languages is {
+            "spa": "Spanish",
+            "cat": "Catalan",
+            "eus": "Basque",
+            "glc": "Galician"
+        } it should return return Spanish, Catalan, Basque, Galician`, () => {
+  expect(
+    getInfo({
+      spa: "Spanish",
+      cat: "Catalan",
+      eus: "Basque",
+      glc: "Galician",
+    })
+  ).toBe("Spanish, Catalan, Basque, Galician");
 });
 
+test(`if the currencies is {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "€"
+            }
+        } it should return return Euro`, () => {
+  expect(getInfo({ EUR: { name: "Euro", symbol: "€" } })).toBe("Euro");
+        });
 /*
 More information can be found here: https://jestjs.io/docs/getting-started
 You might want to have a go at using some of Jest's other matchers: https://jestjs.io/docs/expect
