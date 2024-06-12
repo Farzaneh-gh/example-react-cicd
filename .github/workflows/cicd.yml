@@ -24,6 +24,8 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm run test
+      - name: run build
+        run: npm run build  
         env:
           VITE_APP_PUBLIC_URL: ${{ github.repository }}
       - name: uploading build files
