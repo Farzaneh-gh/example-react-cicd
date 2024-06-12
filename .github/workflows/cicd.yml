@@ -28,6 +28,7 @@ jobs:
       run: npm run build
       env:
         VITE_APP_PUBLIC_URL: ${{ github.repository }}
+        
 
 
 
